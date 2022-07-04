@@ -9,23 +9,24 @@
 <body>
     <header>
         <h1>Food Journal</h1>
-        <h2 id="date-heading"></h2>
-        <label for="search-field">Enter food name and amount:</label>
-        <input type="text" id="search-field" placeholder="e.g., 1 cup of rice">
-        <button id="add-button">Add</button>
+        <input type="date" id="date-input">
+        <label for="item-input">Enter food item & amount:</label>
+        <input type="text" id="item-input" placeholder="e.g., 2 cups of rice">
+        <button id="add-button">add</button>
     </header>
     <main>
         <table id="nutrition-table">
             <tr>
-                <th>Item</th>
-                <th>Fat</th>
-                <th>Carbs</th>
-                <th>Protein</th>
-                <th>Calories</th>
+                <th>item</th>
+                <th>fat</th>
+                <th>carbs</th>
+                <th>protein</th>
+                <th>calories</th>
             </tr>
         </table>
+        <button id="save-button">save</button>
     </main>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/js/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
