@@ -4,48 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Clean Eats D.C.</title>
+    <title>Food Journal</title>
 </head>
-
 <body>
-    <h1 class="title" id="title">Clean Eats D.C.</h1>
-
-    <div class="container" id="search-section">
-        <h2 class="find">Find restaurants that serve</h2>
-
-        <p>
-            <label for="checkbox">
-                Vegeratian
-            </label>
-            <input type="checkbox" name="Vegetarian" id="checkbox1" />
-        </p>
-
-        <p>
-            <label for="checkbox">
-                Vegan
-            </label>
-            <input type="checkbox" name="Vegan" id="checkbox2" />
-        </p>
-
-        <p>
-            <label for="checkbox">
-                Gluten-Free
-            </label>
-            <input type="checkbox" name="Gluten-Free" id="checkbox3" />
-        </p>
-
-        <p>
-            <label for="checkbox">
-                Dairy-Free
-            </label>
-            <input type="checkbox" name="Dairy-Free" id="checkbox4" />
-        </p>
-
-
-
-        <button type="button">Search</button>
-
-    </div>
-
+    <header>
+        <h1>Food Journal</h1>
+        <h2 id="date-heading"></h2>
+        <label for="search-field">Enter food name and amount:</label>
+        <input type="text" id="search-field" placeholder="e.g., 1 cup of rice">
+        <button id="add-button">Add</button>
+    </header>
+    <main>
+        <table id="nutrition-table">
+            <tr>
+                <th>Item</th>
+                <th>Fat</th>
+                <th>Carbs</th>
+                <th>Protein</th>
+                <th>Calories</th>
+            </tr>
+        </table>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
+</html>
