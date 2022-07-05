@@ -13,6 +13,10 @@ var dateInput      = document.getElementById('date-input')
 var itemInput      = document.getElementById('item-input')
 var addButton      = document.getElementById('add-button')
 var nutritionTable = document.getElementById('nutrition-table')
+var totalFat       = document.getElementById('total-fat')
+var totalCarbs     = document.getElementById('total-carbs')
+var totalProtein   = document.getElementById('total-protein')
+var totalCalories  = document.getElementById('total-calories')
 var saveButton     = document.getElementById('save-button')
 
 dateInput.value = moment().format('YYYY-MM-DD')
@@ -28,11 +32,11 @@ addButton.addEventListener('click', () => {
     fetch('https://api.edamam.com/api/nutrition-data?app_id=' + APP_ID + '&app_key=' + APP_KEY + '&nutrition-type=logging&ingr=' + query)
     .then(response => response.json())
     .then(data => {
-        var entry = {    item: query
-                    ,     fat: parseFloat(data.totalNutrients.FAT.quantity).toFixed(1)
-                    ,   carbs: parseFloat(data.totalNutrients.CHOCDF.quantity).toFixed(1)
-                    , protein: parseFloat(data.totalNutrients.PROCNT.quantity).toFixed(1)
-                    ,    cals: parseFloat(data.totalNutrients.ENERC_KCAL.quantity).toFixed(1) }
+        var entry = {     item: query
+                    ,      fat: Math.round(data.totalNutrients.FAT.quantity)
+                    ,    carbs: Math.round(data.totalNutrients.CHOCDF.quantity)
+                    ,  protein: Math.round(data.totalNutrients.PROCNT.quantity)
+                    , calories: Math.round(data.totalNutrients.ENERC_KCAL.quantity) }
         
         journal[dateInput.value].push(entry)
         addItem(entry)
@@ -46,33 +50,55 @@ saveButton.addEventListener('click', () => {
 })
 
 function changeDate(day) {
-    while (nutritionTable.children.length > 1) {
-        nutritionTable.removeChild(nutritionTable.lastChild)
+    while (nutritionTable.hasChildNodes()) {
+        nutritionTable.removeChild(nutritionTable.firstChild)
     }
 
+    totalFat.textContent      = 0
+    totalCarbs.textContent    = 0
+    totalProtein.textContent  = 0
+    totalCalories.textContent = 0
+
     if (journal[day]) {
-        for (var i = 0; i < journal[day].length; i++) {
-            addItem(journal[day][i])
-        }
-    } else {
+        journal[day].forEach(addItem)
+    }
+    else {
         journal[day] = []
     }
 }
 
 function addItem(entry) {
-    var item    = document.createElement('td')
-    var fat     = document.createElement('td')
-    var carbs   = document.createElement('td')
-    var protein = document.createElement('td')
-    var cals    = document.createElement('td')
-
-    item.textContent    = entry.item
-    fat.textContent     = entry.fat
-    carbs.textContent   = entry.carbs
-    protein.textContent = entry.protein
-    cals.textContent    = entry.cals
-
     var row = document.createElement('tr')
-    row.append(item, fat, carbs, protein, cals)
+
+    var item         = document.createElement('td')
+    var fat          = document.createElement('td')
+    var carbs        = document.createElement('td')
+    var protein      = document.createElement('td')
+    var calories     = document.createElement('td')
+    var removeButton = document.createElement('button')
+
+    item.textContent         = entry.item
+    fat.textContent          = entry.fat
+    carbs.textContent        = entry.carbs
+    protein.textContent      = entry.protein
+    calories.textContent     = entry.calories
+    removeButton.textContent = 'remove'
+
+    row.append(item, fat, carbs, protein, calories, removeButton)
     nutritionTable.appendChild(row)
+
+    totalFat.textContent      = parseInt(totalFat.textContent)      + entry.fat
+    totalCarbs.textContent    = parseInt(totalCarbs.textContent)    + entry.carbs
+    totalProtein.textContent  = parseInt(totalProtein.textContent)  + entry.protein
+    totalCalories.textContent = parseInt(totalCalories.textContent) + entry.calories
+
+    removeButton.addEventListener('click', () => {
+        journal[dateInput.value].splice(row.index - 1, 1)
+        nutritionTable.removeChild(row)
+
+        totalFat.textContent      = parseInt(totalFat.textContent)      - entry.fat
+        totalCarbs.textContent    = parseInt(totalCarbs.textContent)    - entry.carbs
+        totalProtein.textContent  = parseInt(totalProtein.textContent)  - entry.protein
+        totalCalories.textContent = parseInt(totalCalories.textContent) - entry.calories
+    })
 }

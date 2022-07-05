@@ -10,19 +10,32 @@
     <header>
         <h1>Food Journal</h1>
         <input type="date" id="date-input">
+    </header>
+    <main>
         <label for="item-input">Enter food item & amount:</label>
         <input type="text" id="item-input" placeholder="e.g., 2 cups of rice">
         <button id="add-button">add</button>
-    </header>
-    <main>
-        <table id="nutrition-table">
-            <tr>
-                <th>item</th>
-                <th>fat</th>
-                <th>carbs</th>
-                <th>protein</th>
-                <th>calories</th>
-            </tr>
+        <table>
+            <thead>
+                <tr>
+                    <th>item</th>
+                    <th>fat</th>
+                    <th>carbs</th>
+                    <th>protein</th>
+                    <th>calories</th>
+                </tr>
+            </thead>
+            <tbody id="nutrition-table">
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>total</th>
+                    <td id="total-fat">0</td>
+                    <td id="total-carbs">0</td>
+                    <td id="total-protein">0</td>
+                    <td id="total-calories">0</td>
+                </tr>
+            </tfoot>
         </table>
         <button id="save-button">save</button>
     </main>
