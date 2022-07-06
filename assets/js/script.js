@@ -18,6 +18,8 @@ var totalCarbs     = document.getElementById('total-carbs')
 var totalProtein   = document.getElementById('total-protein')
 var totalCalories  = document.getElementById('total-calories')
 var saveButton     = document.getElementById('save-button')
+var jokeButton     = document.getElementById('joke-button')
+
 
 dateInput.value = moment().format('YYYY-MM-DD')
 changeDate(dateInput.value)
@@ -101,4 +103,26 @@ function addItem(entry) {
         totalProtein.textContent  = parseInt(totalProtein.textContent)  - entry.protein
         totalCalories.textContent = parseInt(totalCalories.textContent) - entry.calories
     })
+}
+
+jokeButton.addEventListener('click', () => {
+    
+
+    fetch('https://api.spoonacular.com/food/jokes/random?apiKey=0ca927cd7ba44742a875c47e86abe2a8')
+    .then(response => response.json())
+    .then(data => {
+        
+        console.log(data);
+        displayJoke(data);
+        
+    })
+
+});
+
+function displayJoke(data){
+
+    var jokeDisplay    = document.getElementById('joke-display')
+    
+    jokeDisplay.textContent = data.text
+    
 }
