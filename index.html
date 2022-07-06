@@ -5,24 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food Journal</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-    <header>
-        <h1>Food Journal</h1>
-        <input type="date" id="date-input">
+    <header class="hero is-primary">
+        <div class="hero-body">
+            <h1 class="title is-1 is-uppercase">Food Journal</h1>
+        </div>
     </header>
-    <main>
-        <label for="item-input">Enter food item & amount:</label>
-        <input type="text" id="item-input" placeholder="e.g., 2 cups of rice">
-        <button id="add-button">add</button>
-        <table>
+    <main class="notification is-primary has-background-warning">
+        <input type="date" id="date-input">
+        <table class="table is-bordered content has-text-centered">
             <thead>
                 <tr>
-                    <th>item</th>
-                    <th>fat</th>
-                    <th>carbs</th>
-                    <th>protein</th>
-                    <th>calories</th>
+                    <th>Items</th>
+                    <th>Fat</th>
+                    <th>Carbs</th>
+                    <th>Protein</th>
+                    <th>Calories</th>
                 </tr>
             </thead>
             <tbody id="nutrition-table">
@@ -37,18 +39,66 @@
                 </tr>
             </tfoot>
         </table>
-        <button id="save-button">save</button>
-
-        <div>
-
-            <label for="joke-field">Press for a laugh</label>
-
-            <button id="joke-button">Joke</button>
-
-            <p id="joke-display"></span></p>
-            
+        <div id="something">
+            <label id="item-input-label" for="item-input"><em>Enter food item & amount:</em></label>
+            <input type="text" id="item-input" placeholder="e.g., 2 cups of rice">
+            <button id="add-button" class="button is-link is-rounded">add</button>
         </div>
+        <button id="save-button" class="button is-link is-rounded">save</button>
     </main>
+    <div class="columns">
+        <div class="column level-item has-text-centered has-background-primary">
+          <strong>Fats</strong>
+          <p>Fat is a type of nutrient. You need some fat in 
+             your diet but not too much. Fats give you energy 
+             and help your body absorb vitamins. Dietary fat 
+             also plays a major role in your cholesterol levels.</p>
+        </div>
+        <div class="column level-item has-text-centered has-background-primary">
+          <strong>Carbohydrates</strong>
+          <p>Carbohydrates, or carbs, are sugar molecules. Along 
+             with proteins and fats, carbohydrates are one of three 
+             main nutrients found in foods and drinks.Your body 
+             breaks down carbohydrates into glucose. Glucose, or 
+             blood sugar, is the main source of energy for your 
+             body's cells, tissues, and organs. Glucose can be 
+             used immediately or stored in the liver and muscles 
+             for later use.
+            
+         </p>
+        </div>
+        <div class="column level-item has-text-centered has-background-primary">
+          <strong>Protein</strong>
+          <p>Protein is in every cell in the body. Our bodies 
+              need protein from the foods we eat to build and 
+              maintain bones, muscles and skin. We get proteins 
+              in our diet from meat, dairy products, nuts, and 
+              certain grains and beans. Proteins from meat and 
+              other animal products are complete proteins. This 
+              means they supply all of the amino acids the body 
+              can't make on its own. Most plant proteins are 
+              incomplete. You should eat different types of plant 
+              proteins every day to get all of the amino acids 
+              your body needs.
+          </p>
+        </div>
+        <div class="column level-item has-text-centered has-background-primary">
+            <strong>Calories</strong>
+            <p>Calories are essential for human health. The key is 
+            consuming the right amount.Everyone requires different 
+            amounts of energy each day, depending on age, sex, size, 
+            and activity level.People in the United States consume 
+            more than 11 percent of their daily calories from fast food.
+            Foods high in energy but low in nutritional value provide 
+            empty calories.</p>
+          
+        </div>
+    </div>
+    <button id="joke-button" class="button is-rounded">Press for a laugh</button>
+    <p id="joke-display"></p>
+    <footer class="footer">
+        <p class="content has-text-centered">Created by Franco, Matt, Kate, and Yeaty.</p>
+    </footer>
     <script src="./assets/js/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
