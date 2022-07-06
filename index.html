@@ -49,7 +49,7 @@
           <p>Carbohydrates, or carbs, are sugar molecules. Along 
              with proteins and fats, carbohydrates are one of three 
              main nutrients found in foods and drinks.Your body 
-             breaks down carbohydrates into glucose. Glucose, or 
+             breaks down carbohydrates into glucose. Glucose, or
              blood sugar, is the main source of energy for your 
              body's cells, tissues, and organs. Glucose can be 
              used immediately or stored in the liver and muscles 
@@ -85,7 +85,19 @@
         </div>
     </div>
     <main>
-        <table class="table is-bordered content has-text-centered">
+        <section class="section">
+            <div class="container">
+                <div class="columns">
+                    <div class="column">
+                        <img src=".assets/images/Fats.jpeg" alt="" class="px-6">    
+                    </div>
+                    <div class="column"></div>
+                    <div class="column"></div>
+                    <div class="column"></div>
+                </div>
+            </div>
+        </section>
+        <table class="table is-bordered content has-text-centered table is-fullwidth">
             <thead>
                 <tr>
                     <th>Items</th>
@@ -94,30 +106,34 @@
                     <th>Protein</th>
                     <th>Calories</th>
                 </tr>
+                
+            </thead>    
+            <tbody id="nutrition-table">
+            </tbody>
+            <tfoot>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <th>total</th>
+                    <td id="total-fat">0</td>
+                    <td id="total-carbs">0</td>
+                    <td id="total-protein">0</td>
+                    <td id="total-calories">0</td>
                 </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-
-            </thead>
+            </tfoot>
         </table>
+        <div class="buttons">
+            <button class="button is-primary is-light">Save</button>
+        </div>
+        
+        <div>
+
+            <label for="joke-field"><strong>Press for a laugh</strong></label>
+            <div class="buttons">
+                <button class="button is-link is-light">Joke</button>
+            </div>
+            
+            <p id="joke-display"></span></p>
+            
+        </div>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>
@@ -127,6 +143,6 @@
             <strong>Clean Eats D.C</strong> by Franco, Matt, Kate, and Yeaty.
           </p>
         </div>
-      </footer>
+    </footer>
 </body>
 </html>
