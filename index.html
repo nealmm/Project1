@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Journal</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>  
+    <section class="hero is-primary">
+        <div class="hero-body">
+          <p class="title is-1 is-uppercase">
+            Clean Eats D.C.
+          </p>
+          <p class="subtitle is-2 is-italic">
+            Food Journal
+          </p>
+        </div>
+    </section>
+    <header>
+        <div class="container is-fluid">
+            <div class="notification is-primary has-background-warning">
+                <h1 class="is-size-3 is-uppercase">Food Journal</h1>
+            </div>
+        </div>
+        <input type="date" id="date-input">
+        
+        
+        <label for="search-field"><em>Enter food name and amount:</em></label>
+        <input type="text" id="search-field" placeholder="e.g., 1 cup of rice">
+        <button class="button is-link is-rounded">Add</button>
+       
+    </header>
+    
+    <br>
+    <div class="columns">
+        <div class="column level-item has-text-centered has-background-primary">
+          <strong>Fats</strong>
+          <p>Fat is a type of nutrient. You need some fat in 
+             your diet but not too much. Fats give you energy 
+             and help your body absorb vitamins. Dietary fat 
+             also plays a major role in your cholesterol levels.</p>
+        </div>
+        <div class="column level-item has-text-centered has-background-primary">
+          <strong>Carbohydrates</strong>
+          <p>Carbohydrates, or carbs, are sugar molecules. Along 
+             with proteins and fats, carbohydrates are one of three 
+             main nutrients found in foods and drinks.Your body 
+             breaks down carbohydrates into glucose. Glucose, or 
+             blood sugar, is the main source of energy for your 
+             body's cells, tissues, and organs. Glucose can be 
+             used immediately or stored in the liver and muscles 
+             for later use.
+            
+         </p>
+        </div>
+        <div class="column level-item has-text-centered has-background-primary">
+          <strong>Protein</strong>
+          <p>Protein is in every cell in the body. Our bodies 
+              need protein from the foods we eat to build and 
+              maintain bones, muscles and skin. We get proteins 
+              in our diet from meat, dairy products, nuts, and 
+              certain grains and beans. Proteins from meat and 
+              other animal products are complete proteins. This 
+              means they supply all of the amino acids the body 
+              can't make on its own. Most plant proteins are 
+              incomplete. You should eat different types of plant 
+              proteins every day to get all of the amino acids 
+              your body needs.
+          </p>
+        </div>
+        <div class="column level-item has-text-centered has-background-primary">
+            <strong>Calories</strong>
+            <p>Calories are essential for human health. The key is 
+            consuming the right amount.Everyone requires different 
+            amounts of energy each day, depending on age, sex, size, 
+            and activity level.People in the United States consume 
+            more than 11 percent of their daily calories from fast food.
+            Foods high in energy but low in nutritional value provide 
+            empty calories.</p>
+          
+        </div>
+    </div>
+    <main>
+        <table class="table is-bordered content has-text-centered">
+            <thead>
+                <tr>
+                    <th>Items</th>
+                    <th>Fat</th>
+                    <th>Carbs</th>
+                    <th>Protein</th>
+                    <th>Calories</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+            </thead>
+        </table>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <footer class="footer">
+        <div class="content has-text-centered">
+          <p>
+            <strong>Clean Eats D.C</strong> by Franco, Matt, Kate, and Yeaty.
+          </p>
+        </div>
+      </footer>
+</body>
+</html>
